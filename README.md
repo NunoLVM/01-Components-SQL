@@ -31,14 +31,14 @@ Vérifie que le fichier db.js a bien les bonnes données pour se connecter à ta
 
 ```bash 
 ├── db.js              # Connexion MySQL
-├── films.js           # Routes de l'API pour les films
+├── film.js           # Routes de l'API pour les film
 ├── server.js          # Point d'entrée de l’application
 └── package.json       # Dépendances
 ```
 
 ## 🎯 Exercice
 
-Tu dois compléter le fichier `films.js` en écrivant les requêtes préparées dans chaque endpoint à l’emplacement suivant :
+Tu dois compléter le fichier `film.js` en écrivant les requêtes préparées dans chaque endpoint à l’emplacement suivant :
 
 ```js
 // TODO : ÉCRIRE LA REQUÊTE PRÉPARÉE
@@ -46,24 +46,24 @@ Tu dois compléter le fichier `films.js` en écrivant les requêtes préparées 
 
 Les endpoints à implémenter :
 
-1. `GET /films`
-Retourne la liste complète des films.
+1. `GET /film`
+Retourne la liste complète des film.
 
-2. `GET /films/:id`
+2. `GET /film/:id`
 Retourne un film par son ID.
 
-3. `POST /films`
+3. `POST /film`
 Ajoute un nouveau film. Vérifie que le champ id et titre sont présents.
 
-4. `PATCH /films/:id`
+4. `PATCH /film/:id`
 Modifie le titre d’un film par son ID.
 
-5. `DELETE /films/:id`
+5. `DELETE /film/:id`
 Supprime un film par son ID
 
 ## 💡 Aide : requête préparée avec mysql2
 ```js
-const sql = "SELECT * FROM films WHERE id = ?";
+const sql = "SELECT * FROM film WHERE id = ?";
 const [rows] = await db.execute(sql, [id]);
 ```
 
@@ -76,9 +76,9 @@ const [rows] = await db.execute(sql, [id]);
 
 Utilise Thunderclient pour tester les routes :
 
-    GET http://localhost:3000/films
+    GET http://localhost:3000/film
 
-    GET http://localhost:3000/films/1
+    GET http://localhost:3000/film/1
 
 
 Bon courage ! 💪
